@@ -94,7 +94,7 @@ p { line-height: 1.5; }
 .text-link:hover .link-label { text-decoration: underline; }
 .text-link > span[aria-hidden] { font-size: 22px; line-height: 1; }
 .hero-figure { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
-.hero-figure > img { width: 100%; height: 480px; object-fit: cover; object-position: 52% 48%; background: var(--warm); }
+.hero-figure > img { width: 100%; height: 480px; object-fit: contain; background: var(--canvas); }
 .hero-figure figcaption { display: flex; justify-content: space-between; gap: 24px; margin-top: 14px; color: var(--muted); font: 12px/1.5 var(--sans); }
 .hero-figure figcaption span:first-child { white-space: nowrap; }
 .hero-figure figcaption span:last-child { text-align: right; }
@@ -135,6 +135,11 @@ h2 { font: 400 clamp(44px, 5vw, 64px)/1.08 var(--serif); letter-spacing: -1.5px;
 .article-item:hover .text-link .link-label { text-decoration: underline; }
 
 /* Experience */
+.practice-photo { display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: 48px; padding-bottom: 48px; margin-bottom: 40px; border-bottom: 1px solid #3d3d3a; }
+.practice-photo > img { width: 100%; height: auto; }
+.practice-photo h3 { font: 400 32px/1.2 var(--serif); margin-top: 20px; max-width: 400px; }
+.practice-photo figcaption > p { font: 16px/1.6 var(--sans); color: #b0aea5; margin-top: 20px; max-width: 400px; }
+@media (max-width:820px) { .practice-photo { grid-template-columns: 1fr; gap: 24px; } .practice-photo h3 { font-size: 28px; } }
 .inverse-section { background: #000; color: var(--canvas); }
 .inverse-section .eyebrow, .inverse-section .presentation > p:not(.eyebrow), .inverse-section .audio-materials > p { color: #b0aea5; }
 .inverse-section .section-intro { color: #d1cfc5; }
