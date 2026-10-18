@@ -21,3 +21,13 @@
   .article-prose h1, .article-prose h2 { font-size: 32px; margin-bottom: 24px; }
   .article-prose h3 { font-size: 24px; }
 }
+:root { color-scheme: light; }
+/* Native scrollbars share the page palette, including readers and tables. */
+* { scrollbar-width: thin; scrollbar-color: #929087 #faf9f5; }
+@supports not (scrollbar-color: #929087 #faf9f5) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner { background: #faf9f5; }
+  ::-webkit-scrollbar-thumb { background: #929087; border: 2px solid #faf9f5; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #5e5d59; }
+}
+@media (forced-colors: active) { * { scrollbar-color: auto; scrollbar-width: auto; } }
