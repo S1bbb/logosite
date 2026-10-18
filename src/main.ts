@@ -4,7 +4,7 @@ document.documentElement.classList.add('js');
 
 const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
 const nav = document.querySelector<HTMLElement>('#main-nav');
-const mobileMenu = window.matchMedia('(max-width: 950px)');
+const mobileMenu = window.matchMedia('(max-width: 1100px)');
 const header = document.querySelector<HTMLElement>('.site-header');
 
 function updateHeaderHeight() {

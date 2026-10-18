@@ -38,6 +38,7 @@ p { line-height: 1.5; }
 .section { padding-block: 104px; scroll-margin-top: var(--header-height); }
 .section:not(.hero) { padding-block: 0; }
 .section-core { padding-block: 64px; }
+.contacts-section .section-core { min-height: calc(100svh - var(--header-height)); }
 .section-extra { padding-block: 32px 56px; border-top: 1px solid var(--line); }
 .section-extra .section-footnote { margin-top: 0; }
 .section-extra > .reading-list { border-top: 0; }
@@ -192,7 +193,8 @@ body.has-dialog { overflow: hidden; }
 .reader-content .article-prose { padding: 0; max-width: none; }
 
 @media (min-width:1600px) { .hero-figure > img { height: 510px; } }
-@media (min-width:951px) {
+/* Fit a screen on wide desktop windows; tall and touch screens use natural flow. */
+@media (min-width:1101px) and (min-aspect-ratio:4/3) and (hover:hover) and (pointer:fine) {
   .section-core { min-height: calc(100svh - var(--header-height)); display: flex; flex-direction: column; justify-content: center; padding-block: clamp(24px,4svh,48px); }
   .section-core .section-heading { margin-bottom: clamp(24px,3svh,32px); }
   .section-core h2 { font-size: clamp(40px,7svh,60px); margin-top: 14px; }
@@ -230,13 +232,13 @@ body.has-dialog { overflow: hidden; }
   .section-heading, .colleague-layout, .intro-grid, .contact-layout { gap: 40px; }
   .reading-row { grid-template-columns: .8fr 2.3fr auto; gap: 24px; }
 }
-@media (max-width:950px) {
+@media (max-width:1100px) {
   :root { --header-height: 77px; }
   .header-inner { min-height: 76px; }
   .js .menu-toggle { display: flex; }
   .main-nav { flex-wrap: wrap; justify-content: flex-end; gap: 0 14px; }
   .main-nav > a { padding: 8px 0; }
-  .js .main-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; max-height: calc(100dvh - 76px); overflow-y: auto; background: var(--canvas); padding: 16px 32px 28px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
+  .js .main-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; max-height: calc(100dvh - var(--header-height)); overflow-y: auto; background: var(--canvas); padding: 16px 32px 28px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
   .js .main-nav.is-open { display: flex; }
   .js .main-nav > a { padding: 14px 0; font-size: 18px; border-bottom: 1px solid var(--line); }
   .js .main-nav > a::after { display: none; }
@@ -265,13 +267,39 @@ body.has-dialog { overflow: hidden; }
   .contact-layout { gap: 32px; }
   .email-link { font-size: 24px; }
 }
+/* Keep tablet columns readable instead of squeezing the phone/desktop layouts. */
+@media (max-width:1100px), (max-aspect-ratio:1/1), (hover:none) {
+  .colleague-layout { align-items: start; }
+  .featured-resource { min-height: 0; }
+  .featured-resource > p { margin-bottom: 28px; }
+  .featured-bottom { margin-top: auto; }
+}
+@media (max-width:820px) {
+  .hero-grid, .intro-grid, .section-heading, .colleague-layout, .contact-layout { grid-template-columns: minmax(0,1fr); }
+  .hero-grid { gap: 40px; }
+  .hero-copy { max-width: 680px; }
+  .hero h1 { font-size: clamp(58px,10vw,76px); }
+  .hero-figure > img { height: auto; max-height: 480px; aspect-ratio: 4/3; }
+  .intro-grid { gap: 24px; padding-top: 40px; margin-top: 48px; }
+  .section-heading { align-items: start; gap: 24px; margin-bottom: 32px; }
+  .section-intro { max-width: 640px; }
+  .colleague-layout { gap: 36px; }
+  .featured-resource h3 { margin-top: 28px; }
+  .contact-layout { gap: 40px; }
+}
+@media (hover:none) and (pointer:coarse) {
+  .text-link { min-height: 44px; }
+  .main-nav > a { min-height: 44px; }
+  .main-nav > a { font-size: 16px; }
+  .section-core { padding-block: 56px; }
+}
 @media (max-width:680px) {
   :root { --header-height: 73px; }
   .wrap { width: calc(100% - 40px); }
   .header-inner { min-height: 72px; }
   .wordmark { font-size: 17px; }
   .wordmark-role { font-size: 11px; }
-  .js .main-nav { padding-inline: 20px; max-height: calc(100dvh - 72px); }
+  .js .main-nav { padding-inline: 20px; }
   .section { padding-block: 64px; }
   .hero { padding-top: 40px; }
   .hero-grid { grid-template-columns: minmax(0,1fr); gap: 36px; }
