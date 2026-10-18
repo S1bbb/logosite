@@ -12,6 +12,7 @@ const articles = [
   { slug: 'migratory-birds-lesson', title: 'Конспект занятия «Перелётные птицы»', section: 'colleagues', images: false },
   { slug: 'riddles-and-speech', title: 'Загадка как средство развития речи', section: 'colleagues', images: false },
   { slug: 'connected-speech', title: 'Развитие связной речи', section: 'colleagues', images: true },
+  { slug: 'rhythmic-songs', title: 'Логоритмические песенки в режимных моментах', section: 'experience', images: false },
 ];
 const escapeHtml = (value) => value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 
@@ -25,6 +26,14 @@ for (const filename of ['image-001.jpg', 'image-002.jpg', 'image-003.jpg']) {
 for (const article of articles) {
   const source = path.join(root, 'materials', 'documents', `${article.slug}.md`);
   let markdown = (await readFile(source, 'utf8')).replace(/<!--[^]*?-->/g, '').replace(/^\s*# .+\n/, '');
+  if (article.slug === 'rhythmic-songs') {
+    markdown = markdown
+      .replace(/^\s*Публичное представление собственного педагогического опыта на сайте\s*\n/, '')
+      .replace(/^\s*\*\*«Использование логоритмических упражнений в режимных моментах»\*\*\s*\n/, '')
+      .replace(/^\s*Подготовила\s*\n\s*учитель-логопед Соколова О\.В\.\s*\n/, '')
+      .replace(/^-\s+1\.\s+\*\*(.+?)\*\*\s*$/gm, (_, heading) => `### ${heading.replace(/\.$/, '')}`)
+      .replace(/\|  \|  \|\r?\n\| --- \| --- \|/g, '| Текст | Движения |\n| --- | --- |');
+  }
   const pendingImages = [];
   markdown = markdown.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, relative) => {
     if (!article.images) return '';
