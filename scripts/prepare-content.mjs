@@ -6,6 +6,7 @@ import { marked } from 'marked';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const publicRoot = path.join(root, 'public');
 const articles = [
+  { slug: 'greeting', title: 'Приветствие', section: 'greeting', images: false },
   { slug: 'family-and-speech', title: 'Роль семьи в речевом развитии ребёнка', section: 'parents', images: false },
   { slug: 'lexical-topics', title: 'Для чего нужны лексические темы', section: 'parents', images: false },
   { slug: 'finger-games', title: 'Пальчиковые игры', section: 'parents', images: true },
