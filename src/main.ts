@@ -42,16 +42,59 @@ if (menuToggle && nav) {
 const sections = [...document.querySelectorAll<HTMLElement>('main > section[id]')];
 const navigationLinks = [...document.querySelectorAll<HTMLAnchorElement>('.main-nav a')];
 let scrollScheduled = false;
+let navigationTarget: HTMLAnchorElement | null = null;
+let navigationTimeout: ReturnType<typeof setTimeout>;
+
+function moveNavigationLine() {
+  const activeLink = nav?.querySelector<HTMLElement>('a[aria-current]');
+  if (!nav || !activeLink || mobileMenu.matches) return;
+  nav.style.setProperty('--nav-line-x', `${activeLink.offsetLeft}px`);
+  nav.style.setProperty('--nav-line-y', `${activeLink.offsetTop + activeLink.offsetHeight - 8}px`);
+  nav.style.setProperty('--nav-line-width', `${activeLink.offsetWidth}px`);
+}
+
+function releaseNavigationTarget() {
+  navigationTarget = null;
+  clearTimeout(navigationTimeout);
+  updateNavigation();
+}
+
+for (const link of navigationLinks) {
+  link.addEventListener('click', (event) => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+    navigationTarget = link;
+    clearTimeout(navigationTimeout);
+    navigationTimeout = setTimeout(releaseNavigationTarget, 2000);
+    updateNavigation();
+  });
+}
+window.addEventListener('wheel', releaseNavigationTarget, { passive: true });
+window.addEventListener('touchstart', releaseNavigationTarget, { passive: true });
+window.addEventListener('keydown', (event) => {
+  if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) releaseNavigationTarget();
+});
+if (nav) new ResizeObserver(moveNavigationLine).observe(nav);
+document.fonts.ready.then(moveNavigationLine);
 
 function updateNavigation() {
   const threshold = Math.min(window.innerHeight * 0.3, 220);
   let current: HTMLElement | undefined = sections[0];
   for (const section of sections) if (section.getBoundingClientRect().top <= threshold) current = section;
   if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4) current = sections.at(-1);
+  // Keep the clicked destination active while smooth scrolling passes other sections.
+  if (navigationTarget) {
+    const destination = sections.find(section => `#${section.id}` === navigationTarget?.hash);
+    if (destination) current = destination;
+    if (destination && Math.abs(destination.getBoundingClientRect().top - (header?.getBoundingClientRect().bottom ?? 0)) < 2) {
+      navigationTarget = null;
+      clearTimeout(navigationTimeout);
+    }
+  }
   for (const link of navigationLinks) {
     if (link.hash === `#${current?.id}`) link.setAttribute('aria-current', 'location');
     else link.removeAttribute('aria-current');
   }
+  moveNavigationLine();
   scrollScheduled = false;
 }
 

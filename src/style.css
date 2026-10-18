@@ -70,7 +70,9 @@ p { line-height: 1.5; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 88px; }
 .wordmark { flex-shrink: 0; text-decoration: none; font: 600 18px/1.3 var(--sans); letter-spacing: -.4px; }
 .wordmark-role { display: block; margin-top: 4px; font: 400 12px/1.4 var(--sans); letter-spacing: 0; color: var(--muted); }
-.main-nav { display: flex; align-items: center; gap: 22px; }
+.main-nav { position: relative; display: flex; align-items: center; gap: 22px; }
+.js .main-nav::after { position: absolute; left: 0; top: var(--nav-line-y, 0px); width: var(--nav-line-width, 0px); height: 1px; background: currentColor; content: ''; pointer-events: none; transform: translateX(var(--nav-line-x, 0px)); transition: transform .35s cubic-bezier(.22,.61,.36,1), width .35s cubic-bezier(.22,.61,.36,1), top .35s cubic-bezier(.22,.61,.36,1); }
+.js .main-nav > a::after { display: none; }
 .main-nav > a { position: relative; display: block; padding: 14px 0; font: 400 15px/1.4 var(--sans); text-decoration: none; white-space: nowrap; }
 .main-nav > a::after { position: absolute; bottom: 7px; left: 0; right: 0; content: ''; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .2s; }
 .main-nav > a:hover::after, .main-nav > a[aria-current]::after { transform: scaleX(1); }
@@ -245,6 +247,7 @@ body.has-dialog { overflow: hidden; }
   .main-nav > a { padding: 8px 0; }
   .js .main-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; max-height: calc(100dvh - var(--header-height)); overflow-y: auto; background: var(--canvas); padding: 16px 32px 28px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
   .js .main-nav.is-open { display: flex; }
+  .js .main-nav::after { display: none; }
   .js .main-nav > a { padding: 14px 0; font-size: 18px; border-bottom: 1px solid var(--line); }
   .js .main-nav > a::after { display: none; }
   .hero h1 { font-size: 66px; letter-spacing: -2.5px; }
