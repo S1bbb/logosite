@@ -1,0 +1,196 @@
+{
+  "checkedAt": "2026-10-18",
+  "documents": 19,
+  "presentations": 2,
+  "documentImages": 77,
+  "sourceImagesChecked": 100,
+  "tables": 14,
+  "audioFiles": 4,
+  "files": [
+    {
+      "source": "input/Контакты.docx",
+      "sha256": "56f579dfdc346196b88b28812b32299393d3ea95eddf74650c24dedf3c503084",
+      "output": "materials/documents/contacts.md",
+      "sourceBytes": 14366,
+      "tables": 0,
+      "images": 0,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Приветствие.docx",
+      "sha256": "d792790c396873265dfd8c8ff87004501bc7777270f635ac606fefb258836be5",
+      "output": "materials/documents/greeting.md",
+      "sourceBytes": 17776,
+      "tables": 0,
+      "images": 0,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Раскраска_Новогодние шары_5 гр.docx",
+      "sha256": "3320af9422d2486bdb4fd646ddcf90c5682358cda381e88004011c4e4212e7b7",
+      "output": "materials/documents/christmas-coloring.md",
+      "sourceBytes": 3325081,
+      "tables": 0,
+      "images": 28,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В. Картотека Артикуляционная гимнастика.docx",
+      "sha256": "71ed9ee0a16a2d2f36da67f53a53e7e5a1bb5426afdb34756870facb6516b2c6",
+      "output": "materials/documents/articulation-cards.md",
+      "sourceBytes": 1285883,
+      "tables": 0,
+      "images": 10,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В. Картотека Физминутки.docx",
+      "sha256": "8a8d7840ba1f74a021641350c91c0b60b5f2e8bc6c979b1fd3c32db3a0fb4898",
+      "output": "materials/documents/movement-breaks.md",
+      "sourceBytes": 44629,
+      "tables": 1,
+      "images": 1,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В.__Артикуляционная гимнастика.docx",
+      "sha256": "2125ccd48a664d95bd4ec27a119e1f301d33ae84bb51f91e9009632f5c3d799e",
+      "output": "materials/documents/articulation-exercises.md",
+      "sourceBytes": 972041,
+      "tables": 0,
+      "images": 2,
+      "ocrDraft": true
+    },
+    {
+      "source": "input/Соколова О.В.__Дых гимн.docx",
+      "sha256": "fdd52ee26c31414ab8473ab490bb5504f1f40c6ea722b17407f35edd3e6be844",
+      "output": "materials/documents/breathing-exercises.md",
+      "sourceBytes": 11547678,
+      "tables": 0,
+      "images": 10,
+      "ocrDraft": true
+    },
+    {
+      "source": "input/Соколова О.В.__Сладкая АГ.docx",
+      "sha256": "8c6abf4d151cc3a990384506d5422a45ea917aa69d784f70e28c7e3644493d65",
+      "output": "materials/documents/sweet-articulation.md",
+      "sourceBytes": 1189488,
+      "tables": 0,
+      "images": 1,
+      "ocrDraft": true
+    },
+    {
+      "source": "input/Соколова О.В._Загадка как средство развития речи у дошкольников_Статья на конкурс.docx",
+      "sha256": "4fad18e21dde9abad243d6c4b3043271c427d0002318a8d3500c5bb39100f4c8",
+      "output": "materials/documents/riddles-and-speech.md",
+      "sourceBytes": 1125885,
+      "tables": 0,
+      "images": 3,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В._Конспект подгруппового логопедического занятия по лексической теме Перелётные птицы_.docx",
+      "sha256": "bd237ba6f581fa18f9cef27c51830cf8f5ae50c3c2b180ab5ee4259f70e66fee",
+      "output": "materials/documents/migratory-birds-lesson.md",
+      "sourceBytes": 33129,
+      "tables": 0,
+      "images": 0,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В._Курсы повышения квалификации.docx",
+      "sha256": "0612b5336f244a4a4fa9808efd18b346ccf853dcb7bc984ff77a5f45519cd398",
+      "output": "materials/documents/qualifications.md",
+      "sourceBytes": 3049825,
+      "tables": 1,
+      "images": 6,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В._Лексические темы.docx",
+      "sha256": "3e62aadb99c845ab8055894a6aee7275a0b67942851a8cc6568745b986123fdf",
+      "output": "materials/documents/lexical-topics.md",
+      "sourceBytes": 17548,
+      "tables": 0,
+      "images": 0,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В._Пальчиковые игры.docx",
+      "sha256": "da65f6391115cc95232769d2aa04f5e66c0d5e38b0dde214ff4b6b034abec6cb",
+      "output": "materials/documents/finger-games.md",
+      "sourceBytes": 347721,
+      "tables": 0,
+      "images": 3,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В._Пирамида обучения Вильямса и Шеленбергера..._.docx",
+      "sha256": "aee4a90e8dc7d556551417e4249976c4a4bf3baa630928a48303acf3f010a905",
+      "output": "materials/documents/learning-pyramid.md",
+      "sourceBytes": 377727,
+      "tables": 0,
+      "images": 1,
+      "ocrDraft": true
+    },
+    {
+      "source": "input/Соколова О.В._Представление опыта работы по развитию фонематического слуха у дошкольников с ЗПР по системе Т.А. Ткаченко_26.04.24_ШМЛ.pptx",
+      "sha256": "1b7994ed395e4d0d3b9e71368a54b96d2e225e04170f68419597490723c404e3",
+      "output": "materials/presentations/phonemic-hearing.pdf",
+      "sourceBytes": 17306829,
+      "pages": 20
+    },
+    {
+      "source": "input/Соколова О.В._Представление опыта работы_Рабочие листы_ИИ.docx",
+      "sha256": "b39660f29e27df9d4b409f7344c605c54b0e966d8923e48354202fbff8124e00",
+      "output": "materials/documents/ai-worksheets.md",
+      "sourceBytes": 2253850,
+      "tables": 0,
+      "images": 3,
+      "ocrDraft": true
+    },
+    {
+      "source": "input/Соколова О.В._Публичное представление опыта работы_Подборка логоритмических песенок_Соколова ОВ_Логоритмика в режимных моментах_.docx",
+      "sha256": "8bf99cfc2c2b02247f6de16132a2487510150cfdc5ecfbca83ad13449a4d44d7",
+      "output": "materials/documents/rhythmic-songs.md",
+      "sourceBytes": 39763,
+      "tables": 12,
+      "images": 0,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В._Путь к правильной речи от звука до связного высказывания_.docx",
+      "sha256": "393e829ee5644972f4f188df4cfbdad7a8cb6e4cee59703a035ef621ff817f22",
+      "output": "materials/documents/speech-development.md",
+      "sourceBytes": 20576,
+      "tables": 0,
+      "images": 0,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В._Развитие связной речи у дошкольников с общим недоразвитием речи в мультиметодическом подходе на логопедических занятиях_.docx",
+      "sha256": "79aa8da4667b9478fcc27aa5f9ca6e767ecf5d80b77172b130ff15cdfafe88bb",
+      "output": "materials/documents/connected-speech.md",
+      "sourceBytes": 3767324,
+      "tables": 0,
+      "images": 4,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова О.В._Роль семьи в речевом развитии ребёнка_5 гр.docx",
+      "sha256": "715837edf6651b621775306d3260eb9b5082a63b00ef51992150c044098a159b",
+      "output": "materials/documents/family-and-speech.md",
+      "sourceBytes": 1175728,
+      "tables": 0,
+      "images": 5,
+      "ocrDraft": false
+    },
+    {
+      "source": "input/Соколова ОВ_Дидактическое пособие к конспекту Перелетные птицы_Фонематич.восприятие.pptx",
+      "sha256": "36d1727921eb030e02293722cc7aa9f4a2b051a5a1b221789d981f1bba833a0f",
+      "output": "materials/presentations/migratory-birds.pdf",
+      "sourceBytes": 6219894,
+      "pages": 7
+    }
+  ]
+}
