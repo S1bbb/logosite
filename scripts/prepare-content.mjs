@@ -11,6 +11,9 @@ const articles = [
   { slug: 'lexical-topics', title: 'Для чего нужны лексические темы', section: 'parents', images: false },
   { slug: 'finger-games', title: 'Пальчиковые игры', section: 'parents', images: true },
   { slug: 'speech-development', title: 'Путь к правильной речи: от звука до связного высказывания', section: 'parents', images: false },
+  { slug: 'articulation-exercises', title: 'Артикуляционная гимнастика', section: 'parents', images: true },
+  { slug: 'sweet-articulation', title: 'Сладкая артикуляционная гимнастика', section: 'parents', images: true },
+  { slug: 'breathing-exercises', title: 'Дыхательная гимнастика', section: 'parents', images: true },
   { slug: 'migratory-birds-lesson', title: 'Конспект занятия «Перелётные птицы»', section: 'colleagues', images: false },
   { slug: 'riddles-and-speech', title: 'Загадка как средство развития речи', section: 'colleagues', images: false },
   { slug: 'connected-speech', title: 'Развитие связной речи', section: 'colleagues', images: true },
@@ -28,6 +31,8 @@ for (const filename of ['image-001.jpg', 'image-002.jpg', 'image-003.jpg']) {
 for (const article of articles) {
   const source = path.join(root, 'materials', 'documents', `${article.slug}.md`);
   let markdown = (await readFile(source, 'utf8')).replace(/<!--[^]*?-->/g, '').replace(/^\s*# .+\n/, '');
+  // OCR drafts are working notes; publish the original illustrated handouts instead.
+  markdown = markdown.split(/^## Черновое распознавание текста на изображениях\s*$/m)[0];
   if (article.slug === 'rhythmic-songs') {
     markdown = markdown
       .replace(/^\s*Публичное представление собственного педагогического опыта на сайте\s*\n/, '')
