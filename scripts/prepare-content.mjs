@@ -18,6 +18,7 @@ const articles = [
   { slug: 'riddles-and-speech', title: 'Загадка как средство развития речи', section: 'colleagues', images: false },
   { slug: 'connected-speech', title: 'Развитие связной речи', section: 'colleagues', images: true },
   { slug: 'movement-breaks', title: 'Физкультминутки по лексическим темам', section: 'colleagues', images: false },
+  { slug: 'articulation-cards', title: 'Картотека артикуляционной гимнастики', section: 'colleagues', images: true },
   { slug: 'rhythmic-songs', title: 'Логоритмические песенки в режимных моментах', section: 'experience', images: false },
 ];
 const escapeHtml = (value) => value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
