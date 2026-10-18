@@ -23,6 +23,7 @@
 }
 :root { color-scheme: light; --media-radius: 16px; }
 img, video { border-radius: var(--media-radius); }
+.icon-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; }
 /* Native scrollbars share the page palette, including readers and tables. */
 * { scrollbar-width: thin; scrollbar-color: #929087 transparent; }
 @supports not (scrollbar-color: #929087 transparent) {
