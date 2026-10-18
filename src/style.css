@@ -22,7 +22,7 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--canvas); }
-:root:has(.main-nav a[href="#experience"][aria-current]) { background: linear-gradient(var(--canvas) var(--header-height), #000 var(--header-height)) fixed; }
+:root:has(.main-nav a[href="#experience"][aria-current]) { background: #000; }
 a { color: inherit; text-underline-offset: 5px; }
 button, a, summary, audio { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; color: inherit; }
