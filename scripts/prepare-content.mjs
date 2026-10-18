@@ -61,7 +61,7 @@ for (const article of articles) {
   const page = `<!doctype html>
 <html lang="ru">
 <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>${escapeHtml(article.title)} — Ольга Соколова</title><link rel="stylesheet" href="/article.css" /><link rel="icon" href="/favicon.svg" type="image/svg+xml" /></head>
-<body class="article-page"><main><article class="article-prose"><a class="article-back" href="/#${article.section}">← Вернуться к материалам</a><h1>${escapeHtml(article.title)}</h1><p class="article-byline">Из методических материалов Ольги Владимировны Соколовой</p>${html}</article></main></body>
+<body class="article-page"><main><article class="article-prose"><a class="article-back" href="/#${article.section}"><span aria-hidden="true">←</span><span class="article-back-label">Вернуться к материалам</span></a><h1>${escapeHtml(article.title)}</h1><p class="article-byline">Из методических материалов Ольги Владимировны Соколовой</p>${html}</article></main></body>
 </html>\n`;
   await writeFile(path.join(publicRoot, 'articles', `${article.slug}.html`), page);
 }
