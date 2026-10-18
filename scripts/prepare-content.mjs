@@ -18,6 +18,10 @@ const escapeHtml = (value) => value.replace(/[&<>"']/g, (character) => ({ '&': '
 await mkdir(path.join(publicRoot, 'articles'), { recursive: true });
 await mkdir(path.join(publicRoot, 'assets', 'reading'), { recursive: true });
 await mkdir(path.join(publicRoot, 'audio'), { recursive: true });
+await mkdir(path.join(publicRoot, 'assets', 'worksheets'), { recursive: true });
+for (const filename of ['image-001.jpg', 'image-002.jpg', 'image-003.jpg']) {
+  await copyFile(path.join(root, 'materials', 'assets', 'ai-worksheets', filename), path.join(publicRoot, 'assets', 'worksheets', filename));
+}
 for (const article of articles) {
   const source = path.join(root, 'materials', 'documents', `${article.slug}.md`);
   let markdown = (await readFile(source, 'utf8')).replace(/<!--[^]*?-->/g, '').replace(/^\s*# .+\n/, '');
