@@ -7,12 +7,16 @@
     "node": "24.x"
   },
   "scripts": {
+    "prepare:content": "node scripts/prepare-content.mjs",
+    "predev": "npm run prepare:content",
     "dev": "vite --host 127.0.0.1",
     "check": "tsc --noEmit",
+    "prebuild": "npm run prepare:content",
     "build": "npm run check && vite build",
     "preview": "vite preview --host 127.0.0.1"
   },
   "devDependencies": {
+    "marked": "18.1.1",
     "typescript": "7.0.2",
     "vite": "8.3.4"
   }
