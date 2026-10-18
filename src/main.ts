@@ -77,6 +77,7 @@ if (nav) new ResizeObserver(moveNavigationLine).observe(nav);
 document.fonts.ready.then(moveNavigationLine);
 
 function updateNavigation() {
+  updateReadingProgress();
   const threshold = Math.min(window.innerHeight * 0.3, 220);
   let current: HTMLElement | undefined = sections[0];
   for (const section of sections) if (section.getBoundingClientRect().top <= threshold) current = section;
@@ -105,6 +106,12 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 window.addEventListener('resize', updateNavigation);
+function updateReadingProgress() {
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? Math.max(0, Math.min(1, window.scrollY / scrollableHeight)) : 0;
+  document.documentElement.style.setProperty('--reading-progress', String(progress));
+}
+new ResizeObserver(updateReadingProgress).observe(document.body);
 updateNavigation();
 
 const dialog = document.querySelector<HTMLDialogElement>('.reading-dialog');
