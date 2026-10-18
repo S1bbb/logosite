@@ -10,6 +10,7 @@ const articles = [
   { slug: 'family-and-speech', title: 'Роль семьи в речевом развитии ребёнка', section: 'parents', images: false },
   { slug: 'lexical-topics', title: 'Для чего нужны лексические темы', section: 'parents', images: false },
   { slug: 'finger-games', title: 'Пальчиковые игры', section: 'parents', images: true },
+  { slug: 'speech-development', title: 'Путь к правильной речи: от звука до связного высказывания', section: 'parents', images: false },
   { slug: 'migratory-birds-lesson', title: 'Конспект занятия «Перелётные птицы»', section: 'colleagues', images: false },
   { slug: 'riddles-and-speech', title: 'Загадка как средство развития речи', section: 'colleagues', images: false },
   { slug: 'connected-speech', title: 'Развитие связной речи', section: 'colleagues', images: true },

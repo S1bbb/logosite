@@ -40,6 +40,8 @@ p { line-height: 1.5; }
 .section-core { padding-block: 64px; }
 .section-extra { padding-block: 32px 56px; border-top: 1px solid var(--line); }
 .section-extra .section-footnote { margin-top: 0; }
+.section-extra > .reading-list { border-top: 0; }
+.section-extra > .reading-list + .section-footnote { margin-top: 28px; }
 .inverse-section .section-extra { border-color: #3d3d3a; }
 .presentation-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
 .presentation-notes h3 { font: 400 24px/1.3 var(--serif); }
