@@ -21,7 +21,8 @@
   .article-prose h1, .article-prose h2 { font-size: 32px; margin-bottom: 24px; }
   .article-prose h3 { font-size: 24px; }
 }
-:root { color-scheme: light; }
+:root { color-scheme: light; --media-radius: 16px; }
+img, video { border-radius: var(--media-radius); }
 /* Native scrollbars share the page palette, including readers and tables. */
 * { scrollbar-width: thin; scrollbar-color: #929087 transparent; }
 @supports not (scrollbar-color: #929087 transparent) {
