@@ -5,6 +5,14 @@ document.documentElement.classList.add('js');
 const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
 const nav = document.querySelector<HTMLElement>('#main-nav');
 const mobileMenu = window.matchMedia('(max-width: 950px)');
+const header = document.querySelector<HTMLElement>('.site-header');
+
+function updateHeaderHeight() {
+  if (header) document.documentElement.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`);
+}
+
+updateHeaderHeight();
+if (header) new ResizeObserver(updateHeaderHeight).observe(header);
 
 function closeMenu(returnFocus = false) {
   menuToggle?.setAttribute('aria-expanded', 'false');
